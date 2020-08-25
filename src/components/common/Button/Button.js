@@ -1,10 +1,16 @@
-import React from 'react'
-import styles from './Button.module.scss'
-import { additionsClasses } from '../../../utils'
-import classNames from 'classnames'
+import React from 'react';
+import classNames from 'classnames';
 
-export const Button = ({ onClick, children, additions = [] }) => <button
-    className={classNames(styles.button, additionsClasses(additions, styles))}
-    onClick={onClick}>
-        {children}
-    </button>;
+import { additionsClasses } from '../../../utils';
+
+import styles from './Button.module.scss';
+
+export const Button = ({ onClick, children, additions = [] }) => (
+  // eslint-disable-next-line react/button-has-type
+  <button
+    className={ classNames(styles.button, additionsClasses(additions, styles)) }
+    onClick={ onClick }
+  >
+    { children }
+  </button>
+);

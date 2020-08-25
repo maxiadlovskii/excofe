@@ -1,7 +1,6 @@
-import { useMemo, useReducer } from 'react';
+import { useReducer } from 'react';
 
 import { CANCELED, CLEAR_ALL, CLEAR_ERROR, FAILED, REQUEST, SUCCESS } from '../constants/actions';
-import { isObject } from '../utils';
 
 const initialFetchState = {
   isFetching: false,

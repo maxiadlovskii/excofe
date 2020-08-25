@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+
 export const useImageLoader = path => {
-    const [isLoaded, setIsLoaded] = useState(false);
-    const loadImage = () => {
-        const image = new Image();
-        image.onload = () => {
-            setIsLoaded(true)
-        };
-        image.src = path
+  const [ isLoaded, setIsLoaded ] = useState(false);
+  const loadImage = () => {
+    const image = new Image();
+    image.onload = () => {
+      setIsLoaded(true);
     };
-    useEffect(loadImage, []);
-    return [isLoaded]
+    image.src = path;
+  };
+  useEffect(loadImage, []);
+
+  return [ isLoaded ];
 };

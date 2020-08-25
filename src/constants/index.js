@@ -1,3 +1,3 @@
 export const skeletons = {
-    IMAGE: 'IMAGE'
+  IMAGE: 'IMAGE'
 };
