@@ -1,0 +1,17 @@
+@import "../../../styles/vars";
+
+.wrapper {
+  @include fill-all;
+  @include flex-center
+}
+
+.image {
+  @include fill-all;
+  @include skeleton-animation($secondary-color);
+}
+
+.line {
+  width: 100%;
+  height: 40px;
+  @include skeleton-animation($secondary-color)
+}
