@@ -1,4 +1,4 @@
-:global(body) {
+body, p, h4 {
   margin: 0;
   font-family:
     "-apple-system",
@@ -14,4 +14,15 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 0;
 }

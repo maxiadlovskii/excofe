@@ -1,24 +1,22 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
-import { links } from '../../../constants/routerLinks';
+import { links, linkParams } from '../../../constants/routerLinks';
+import { MostViewed } from '../MostViewed/MostViewed';
+import { Video } from '../Video/Video';
 
 import '../../../styles/global.module.scss';
-import styles from './App.module.scss';
-
 
 const routes = [
-  { path: links.VIDEO, component: () => <>TestRouterVideo</> },
-  { path: links.LIST, component: () => <>TestRouterList</> }
+  { path: `${links.VIDEO}/:${linkParams.VIDEO_ID}`, component: Video },
+  { path: links.MOST_VIEWED, component: MostViewed }
 ];
 
 const App = () => (
-  <div className={ styles.App }>
-    <Switch>
-      { routes.map(({ path, component }) => <Route key={ path } path={ path } component={ component } />)}
-      <Redirect to={ links.LIST } />
-    </Switch>
-  </div>
+      <Switch>
+        { routes.map(({ path, component }) => <Route key={ path } path={ path } component={ component } />)}
+        <Redirect to={ links.MOST_VIEWED } />
+      </Switch>
 );
 
 export default App;

@@ -45,7 +45,7 @@ const fetchReducer = (state, action) => {
         ...state,
         isFetching: false,
         isSuccess: true,
-        data: payload
+        data: [ ...state.data, ...payload ]
       };
     case FAILED:
       return {
@@ -67,7 +67,7 @@ const fetchReducer = (state, action) => {
       throw new Error();
   }
 };
-export const useFetch = (fetcher, dataTransformer = d => d.data) => {
+export const useFetch = (fetcher, dataTransformer = d => d) => {
   const [ state, dispatch ] = useReducer(fetchReducer, initialFetchState);
   const fetchData = dispatcher({ fetcher, dataTransformer, dispatch });
   function clearError() {

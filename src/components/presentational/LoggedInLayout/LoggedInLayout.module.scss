@@ -1,0 +1,68 @@
+@import "../../../styles/vars";
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 32px;
+  box-sizing: border-box;
+  @include box-shadow;
+
+  .iconBlock {
+    display: flex;
+  }
+
+  .icon {
+    background-image: url("/assets/video-logo.svg");
+    width: 26px;
+    height: 26px;
+    float: left;
+    cursor: pointer;
+
+    &.downIcon {
+      background-position: 0 0
+    }
+
+    &.stopIcon {
+      background-position: 26px 0
+    }
+
+    &.playIcon {
+      background-position: 100px 0;
+      width: 40px;
+    }
+
+    &.menuIcon {
+      background-position: 55px 0
+    }
+  }
+
+  .navBlock {
+    @include flex-center
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .navItem {
+    margin: 8px;
+  }
+
+  .avatar {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+.content {
+  padding: 16px;
+}

@@ -3,6 +3,6 @@ export const linkParams = {
 };
 
 export const links = {
-  LIST: '/',
-  VIDEO: `/:${linkParams.VIDEO_ID}`
+  MOST_VIEWED: '/',
+  VIDEO: '/video'
 };
